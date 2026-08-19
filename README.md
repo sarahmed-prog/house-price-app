@@ -11,35 +11,23 @@ The project contains three main parts:
 - React frontend
 
 Project Structure
+
+```text
 house_price_predection/
-│
 ├── backend/
 │   ├── app/
-│   │   ├── api/
-│   │   ├── core/
-│   │   ├── schemas/
-│   │   ├── services/
-│   │   └── utils/
 │   ├── models/
 │   │   └── house_price.pkl
 │   ├── tests/
-│   │   └── test_prediction.py
-│   ├── Dockerfile
 │   └── requirements.txt
 │
 ├── frontend/
-│   ├── public/
 │   ├── src/
-│   │   ├── api/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── types/
+│   ├── public/
 │   └── package.json
 │
 ├── notebooks/
-│   ├── house_prices.ipynb
-│   └── locations.json
+│   └── house_prices.ipynb
 │
 ├── src/
 │   └── preprocess.py
@@ -47,7 +35,7 @@ house_price_predection/
 ├── .gitignore
 ├── .gitattributes
 └── README.md
-
+```
 Machine Learning
 
 The model was trained using house price data and is saved as:
