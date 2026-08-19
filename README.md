@@ -11,23 +11,35 @@ The project contains three main parts:
 - React frontend
 
 Project Structure
-
 house_price_predection/
 │
 ├── backend/
 │   ├── app/
+│   │   ├── api/
+│   │   ├── core/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   └── utils/
 │   ├── models/
 │   │   └── house_price.pkl
 │   ├── tests/
+│   │   └── test_prediction.py
+│   ├── Dockerfile
 │   └── requirements.txt
 │
 ├── frontend/
-│   ├── src/
 │   ├── public/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── types/
 │   └── package.json
 │
 ├── notebooks/
-│   └── house_prices.ipynb
+│   ├── house_prices.ipynb
+│   └── locations.json
 │
 ├── src/
 │   └── preprocess.py
