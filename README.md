@@ -2,16 +2,17 @@ House Price Prediction
 
 Project Overview
 
-This project is a Machine Learning application that predicts house prices based on property information entered by the user.
+This project is a Machine Learning web application that predicts the price of a house based on some information about the property.
 
-The project contains three main parts:
+The user enters the property details through the website, and the application sends the data to the backend. The trained Machine Learning model then predicts the house price and shows the result to the user.
+
+The project is divided into three main parts:
 
 - Machine Learning model
 - FastAPI backend
 - React frontend
 
 Project Structure
-
 ```text
 house_price_predection/
 ├── backend/
@@ -29,73 +30,112 @@ house_price_predection/
 ├── notebooks/
 │   └── house_prices.ipynb
 │
-├── src/
-│   └── preprocess.py
-│
 ├── .gitignore
 ├── .gitattributes
 └── README.md
 ```
+
 Machine Learning
 
-The model was trained using house price data and is saved as:
+The model was trained using the House Price dataset.
 
+Before training the model, the data was cleaned and prepared. The preprocessing included handling missing values, converting some columns to numeric values, grouping locations, and preparing categorical features.
+
+A Machine Learning pipeline was used so that the preprocessing and the model are saved together.
+
+The trained model is saved in:
+
+```text
 backend/models/house_price.pkl
+```
 
-The model file is stored using Git LFS because of its large size.
+The model file is stored using Git LFS because of its size.
 
 Backend
 
-The backend is built using FastAPI.
+The backend was built using FastAPI.
 
-It receives the house information from the frontend, processes the input, uses the trained model to make a prediction, and returns the predicted price.
+It receives the property information from the frontend, sends it to the trained model, and returns the predicted house price.
 
-Backend requirements
+Install Backend Requirements
 
-Install the required Python packages:
+From the project root:
 
+``text
 pip install -r backend/requirements.txt
+```
 
-Run the backend from the project root:
+Run the Backend
 
-uvicorn backend.app.main:app --reload
+```text
+uvicorn app.main:app --reload --app-dir backend
+```
+
+The backend runs on:
+
+```text
+http://127.0.0.1:8000
+```
 
 Frontend
 
-The frontend is built using React + TypeScript + Vite.
+The frontend was built using React, TypeScript, and Vite.
 
-Install the dependencies:
+The user can enter information such as:
 
+- Location
+- Furnishing
+- Transaction
+- Ownership
+- Facing
+- Carpet Area
+- Floor
+- Bathrooms
+- Balconies
+
+The frontend sends this information to the backend and displays the predicted price.
+
+Install Frontend Dependencies
+
+```text
 cd frontend
 npm install
+```
 
-Run the frontend:
+Run the Frontend
 
+```text
 npm run dev
+```
 
-The frontend allows the user to enter the property information and receive the predicted house price.
+The frontend will provide a local URL that can be opened in the browser.
 
 Testing
 
 The backend contains tests for the prediction API.
 
-Run the tests with:
+Tests can be run using:
 
+```text
 pytest
+```
 
 Git LFS
 
-The trained model is stored using Git Large File Storage (Git LFS) because the model file is larger than GitHub's normal file-size limit.
+Git LFS is used to store the trained model file.
 
-Make sure Git LFS is installed before cloning and using the project.
+After cloning the repository, make sure Git LFS is installed:
 
+```text
 git lfs install
 git lfs pull
+```
 
 Technologies Used
 
 - Python
 - Pandas
+- NumPy
 - Scikit-learn
 - FastAPI
 - React
@@ -107,4 +147,4 @@ Technologies Used
 
 Project Goal
 
-The goal of this project is to provide a complete Machine Learning application where a trained model can be accessed through an API and used through a user-friendly web interface.
+The main goal of this project was to build a complete Machine Learning application, starting from preparing the dataset and training the model, then connecting the model to a FastAPI backend and creating a simple web interface for making predictions.
